@@ -1,6 +1,7 @@
 <?php
     //connection to Database
-  $con = mysqli_connect("localhost", "root", "", "junior");
+    $db_name = "junior"; //enter your database name
+    $con = mysqli_connect("localhost", "root", "", $db_name);
 
     //find out the number of results
   $sql = 'SELECT * FROM `github`';

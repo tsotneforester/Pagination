@@ -1,6 +1,7 @@
 <?php
     //connection to Database
-  $con = mysqli_connect("localhost", "root", "", "junior");
+  $db_name = "junior"; //enter your database name
+  $con = mysqli_connect("localhost", "root", "", $db_name);
 
     //find out the number of results
   $sql = 'SELECT * FROM `github`';
@@ -30,7 +31,7 @@
 
     <div id="pagination">
       <ul class="pagination">
-        <li class="page-item"><a class="page-link" href='example2.php?Page=1'>1</a></li>
+
           <?php
             if (!isset($_GET['Page'])) {
               $page = 1;
@@ -38,17 +39,19 @@
               $page = $_GET['Page'];
             }
           
-            if ($page <= 2) {
+            if ($page <= 3) {
           
           ?>
+        <li class="page-item"><a class="page-link" href='example2.php?Page=1'>1</a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=2'>2</a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=3'>3</a></li>
+        <li class="page-item"><a class="page-link" href='example2.php?Page=4'>4</a></li>
         <li class="page-item"><a class="page-link" href=''>...</a></li>
 
 
           <?php }  elseif ($page >= ($number_of_pages-2)) {?>
 
-
+        <li class="page-item"><a class="page-link" href='example2.php?Page=1'>1</a></li>
         <li class="page-item"><a class="page-link" href=''>...</a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=<?=($number_of_pages-3) ?>'><?=($number_of_pages-3) ?></a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=<?=($number_of_pages-2) ?>'><?=($number_of_pages-2) ?></a></li>
@@ -57,7 +60,7 @@
 
           <?php } else { ?>
 
-
+        <li class="page-item"><a class="page-link" href='example2.php?Page=1'>1</a></li>
         <li class="page-item"><a class="page-link" href=''>...</a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=<?=($page-1) ?>'><?=($page-1) ?></a></li>
         <li class="page-item"><a class="page-link" href='example2.php?Page=<?=($page) ?>'><?=($page) ?></a></li>
