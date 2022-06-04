@@ -1,2 +1,1 @@
-dbdump/*
-!dbdump/slide.pdf
+dir_to_ignore/
