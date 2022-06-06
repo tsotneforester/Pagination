@@ -1,6 +1,6 @@
 <?php
     //connection to Database
-  $db_name = "junior"; //enter your database name
+  $db_name = ""; //enter your database name
   $con = mysqli_connect("localhost", "root", "", $db_name);
 
     //find out the number of results
